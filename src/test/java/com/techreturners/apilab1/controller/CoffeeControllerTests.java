@@ -46,4 +46,21 @@ public class CoffeeControllerTests {
                 .value(expectedContent));
     }
 
+    @Test
+    public void testGetCoffeeFlavourLatte() throws Exception {
+        String expectedContent = "I like latte";
+        this.mockMvcController.perform(
+                        MockMvcRequestBuilders.get("/coffeeflavour?name=latte"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(expectedContent));
+    }
+
+    @Test
+    public void testGetCoffeeFlavourCapuccino() throws Exception {
+        String expectedContent = "I like cappuccino";
+        this.mockMvcController.perform(
+                        MockMvcRequestBuilders.get("/coffeeflavour?name=cappuccino"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(expectedContent));
+    }
 }

@@ -21,4 +21,11 @@ public class CoffeeController {
        return new Coffee(counter.incrementAndGet(), name);
     }
 
+    @GetMapping(value="/coffeeflavour")
+    public String getCoffeeFlavour(@RequestParam(value="name", defaultValue="latte")
+                                   String name){
+
+        return "I like "+new Coffee(counter.incrementAndGet(), name).getName();
+    }
+
 }
