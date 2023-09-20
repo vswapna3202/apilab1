@@ -50,7 +50,7 @@ public class CoffeeControllerTests {
     public void testGetCoffeeFlavourLatte() throws Exception {
         String expectedContent = "I like latte";
         this.mockMvcController.perform(
-                        MockMvcRequestBuilders.get("/coffeeflavour?name=latte"))
+                        MockMvcRequestBuilders.get("/coffee flavour?name=latte"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(expectedContent));
     }
@@ -59,7 +59,7 @@ public class CoffeeControllerTests {
     public void testGetCoffeeFlavourCapuccino() throws Exception {
         String expectedContent = "I like cappuccino";
         this.mockMvcController.perform(
-                        MockMvcRequestBuilders.get("/coffeeflavour?name=cappuccino"))
+                        MockMvcRequestBuilders.get("/coffee flavour?name=cappuccino"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(expectedContent));
     }
