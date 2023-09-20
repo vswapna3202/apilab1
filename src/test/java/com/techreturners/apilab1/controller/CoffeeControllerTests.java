@@ -14,7 +14,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 @AutoConfigureMockMvc
 @SpringBootTest
 public class CoffeeControllerTests {
-    private Coffee coffee;
     @Autowired
     private MockMvc mockMvcController;
 
@@ -39,9 +38,9 @@ public class CoffeeControllerTests {
 
     @Test
     public void testGetCoffeeCapuccino() throws Exception {
-        String expectedContent = "capuccino";
+        String expectedContent = "cappuccino";
         this.mockMvcController.perform(
-                        MockMvcRequestBuilders.get("/coffee?name=capuccino"))
+                        MockMvcRequestBuilders.get("/coffee?name=cappuccino"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name")
                 .value(expectedContent));
